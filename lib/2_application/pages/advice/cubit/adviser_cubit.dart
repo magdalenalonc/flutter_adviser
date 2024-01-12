@@ -10,8 +10,8 @@ const serverFailureMessage = 'Ups, API error. Please try egain!';
 const cacheFailureMessage = 'Ups, cache failed. Please try egain!';
 
 class AdviserCubit extends Cubit<AdviserCubitState> {
-  AdviserCubit() : super(AdviserInitial());
-  final AdviceUseCases adviceUseCases = AdviceUseCases();
+  AdviserCubit({required this.adviceUseCases}) : super(AdviserInitial());
+  final AdviceUseCases adviceUseCases;
   // could also use other usecases
 
   // bloc - has events; cubit - has functions

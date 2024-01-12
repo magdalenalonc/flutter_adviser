@@ -6,8 +6,9 @@ import 'package:flutter_adviser/1_domain/failures/failures.dart';
 import 'package:flutter_adviser/1_domain/repositories/advice_repo.dart';
 
 class AdviceRepoImpl implements AdviceRepo {
-  final AdviceRemoteDataSource adviceRemoteDataSource =
-      AdviceRemoteDataSourceImpl();
+  AdviceRepoImpl({required this.adviceRemoteDataSource});
+  final AdviceRemoteDataSource adviceRemoteDataSource;
+
   @override
   Future<Either<Failure, AdviceEntity>> getAdviceFromDataSource() async {
     try {
