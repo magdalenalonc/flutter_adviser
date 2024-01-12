@@ -12,7 +12,9 @@ abstract class AdviceRemoteDataSource {
 }
 
 class AdviceRemoteDataSourceImpl implements AdviceRemoteDataSource {
-  final client = http.Client();
+  AdviceRemoteDataSourceImpl({required this.client});
+  final http.Client client;
+
   @override
   Future<AdviceModel> getRandomAdviceFromApi() async {
     final response = await client.get(

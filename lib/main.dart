@@ -4,8 +4,11 @@ import 'package:flutter_adviser/theme.dart';
 import 'package:provider/provider.dart';
 
 import '2_application/core/services/theme_service.dart';
+import 'injection_container.dart' as di; // di -> dependency injection
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   runApp(ChangeNotifierProvider(
     create: (context) => ThemeService(),
     child: const MyApp(),
