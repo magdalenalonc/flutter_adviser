@@ -10,13 +10,13 @@ const serverFailureMessage = 'Ups, API error. Please try egain!';
 const cacheFailureMessage = 'Ups, cache failed. Please try egain!';
 
 class AdviserCubit extends Cubit<AdviserCubitState> {
-  AdviserCubit({required this.adviceUseCases}) : super(AdviserInitial());
+  AdviserCubit({required this.adviceUseCases}) : super(const AdviserInitial());
   final AdviceUseCases adviceUseCases;
   // could also use other usecases
 
   // bloc - has events; cubit - has functions
   void adviceRequestedEvent() async {
-    emit(AdviserStateLoading());
+    emit(const AdviserStateLoading());
 
     final failureOrAdvice = await adviceUseCases.getAdvice();
 

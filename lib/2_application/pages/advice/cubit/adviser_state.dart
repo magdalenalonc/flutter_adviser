@@ -7,9 +7,13 @@ sealed class AdviserCubitState extends Equatable {
   List<Object?> get props => [];
 }
 
-final class AdviserInitial extends AdviserCubitState {}
+final class AdviserInitial extends AdviserCubitState {
+  const AdviserInitial();
+}
 
-final class AdviserStateLoading extends AdviserCubitState {}
+final class AdviserStateLoading extends AdviserCubitState {
+  const AdviserStateLoading();
+}
 
 final class AdviserStateLoaded extends AdviserCubitState {
   const AdviserStateLoaded({required this.advice});
