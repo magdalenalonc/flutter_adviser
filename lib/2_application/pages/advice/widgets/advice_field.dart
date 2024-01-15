@@ -4,6 +4,7 @@ class AdviceField extends StatelessWidget {
   const AdviceField({super.key, required this.advice});
 
   final String advice;
+  static String emptyAdvice = 'What should I do with an empty advice?';
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class AdviceField extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
           child: Text(
-            '''" $advice "''',
+            advice.isNotEmpty ? '''" $advice "''' : emptyAdvice,
             style: themeData.textTheme.bodyLarge,
             textAlign: TextAlign.center,
           ),
