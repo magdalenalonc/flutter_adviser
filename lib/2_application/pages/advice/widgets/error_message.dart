@@ -18,10 +18,12 @@ class ErrorMessage extends StatelessWidget {
           color: Colors.red,
         ),
         const SizedBox(height: 20.0),
-        Text(
-          message,
-          style: themeData.textTheme.displayLarge,
-          textAlign: TextAlign.center,
+        Flexible(
+          child: Text(
+            message,
+            style: themeData.textTheme.displayLarge,
+            textAlign: TextAlign.center,
+          ),
         ),
       ],
     );
