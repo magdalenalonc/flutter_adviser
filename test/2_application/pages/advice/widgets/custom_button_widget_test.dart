@@ -40,8 +40,8 @@ void main() {
         (widgetTester) async {
           final mockOnCustomButtonTap = MockOnCustomButtonTap();
 
-          await widgetTester
-              .pumpWidget(widgetUnderTest(callback: mockOnCustomButtonTap));
+          await widgetTester.pumpWidget(
+              widgetUnderTest(callback: mockOnCustomButtonTap.call));
 
           final customButtonFinder = find.byType(CustomButton);
 
